@@ -6,9 +6,10 @@ $username = "root";
 $password = "legolas4129";
 $dbname = "mediciones";
 
-// Create connection
+// Se establece la conexion
 $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
+
+// Se chekea la conexion
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
@@ -17,10 +18,7 @@ if ($conn->connect_error) {
 $litros = $_GET['litros'];
 $precio = $_GET['precio'];
 
-
-//$sql = "INSERT INTO lecturas (valor, id, 	nombre)
-//VALUES (".$val.",".$id.",'".$nombre."')";
-
+//Inserta en la base de datos
 $sql = "INSERT INTO consumo_agua (litros, precio)
 VALUES (".$litros.",'".$precio."')"; // Al final de cada sentencia debe ir '".$variable."'
 

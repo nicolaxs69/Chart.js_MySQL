@@ -37,16 +37,17 @@ delay(3000);
 
 id = random (10,13);
 
-if(litros  > 99 && litros <= 300){precio =" Consumo Estable";}
-if(litros >=  300 && litros <= 600){precio ="Consumo Leve";}
-if(litros >=  600 && litros <= 800){precio ="Consumo Grave";}
-if(litros >=  800 && litros <= 1000){precio ="Consumo Critico";}
+if(litros  > 99 && litros <= 300){precio ="Consumo%Estable";}
+if(litros >=  300 && litros <= 600){precio ="Consumo%Leve";}
+if(litros >=  600 && litros <= 800){precio ="Consumo%Grave";}
+if(litros >=  800 && litros <= 1000){precio ="Consumo%Critico";}
 //
 //http://192.168.1.102/Chart.js_MySQL/testmysql.php  //
-client.get("http://192.168.1.102:80/Chart.js_MySQL/litros_cerebro.php?litros="+String(litros)+ "&precio="+ String(precio));
+client.get("http://192.168.1.102:80/Chart.js_MySQL/consumo_agua.php?litros="+String(litros)+"&precio="+String(precio));
 
+//client.get("http://192.168.1.17:8080/dato_cerebro.php?identificacionPaciente="+ String(id)+"&dato="+String(dato)+ "&estado="+ String(estado));
 
-delay(60000);
+delay(5000);
   
   // if there are incoming bytes available
   // from the server, read them and print them:
@@ -56,7 +57,7 @@ delay(60000);
   }
   Serial.flush();
 
-  delay(5000);
+  delay(600000);
 }
 
 
